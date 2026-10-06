@@ -619,6 +619,4 @@ _Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;13;14;64;<none>;cpython-313-x8
 _Python3_INTERPRETER_SIGNATURE:INTERNAL=24908a3a773d089b0c925d50978b7b8b
 //NumPy reason failure
 _Python3_NumPy_REASON_FAILURE:INTERNAL=
-//Test check_fmacro_prefix_map__home_tl_Desktop_zephyr_zephyrproject_embedded_CMAKE_SOURCE_DIR_C__fuse_ld_bfd
-check_fmacro_prefix_map__home_tl_Desktop_zephyr_zephyrproject_embedded_CMAKE_SOURCE_DIR_C__fuse_ld_bfd:INTERNAL=1
 
