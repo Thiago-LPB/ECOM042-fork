@@ -19,7 +19,7 @@
 #endif
 
 #define LED_BUTTON DT_ALIAS(sw0)
-#define LED0_NODE DT_ALIAS(led0)
+#define LED0_NODE  DT_ALIAS(led0)
 
 static const struct gpio_dt_spec button = GPIO_DT_SPEC_GET(LED_BUTTON, gpios);
 static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED0_NODE, gpios);
