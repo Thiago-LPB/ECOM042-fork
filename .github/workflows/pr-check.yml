@@ -12,6 +12,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 jobs:
   corrigir:
     uses: JoaoMatheusND/ECOM042-CI/.github/workflows/check-activity.yml@main
