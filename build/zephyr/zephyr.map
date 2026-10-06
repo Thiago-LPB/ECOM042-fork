@@ -4079,8 +4079,8 @@ noinit
 .debug_line     0x0000000000000000    0x14511
  *(SORT_BY_ALIGNMENT(.debug_line))
  .debug_line    0x0000000000000000      0x13d zephyr/CMakeFiles/offsets.dir/./arch/posix/core/offsets/offsets.c.obj
- .debug_line    0x000000000000013d      0x85f app/libapp.a(board_io.c.obj)
- .debug_line    0x000000000000099c      0x554 app/libapp.a(main.c.obj)
+ .debug_line    0x000000000000013d      0x85b app/libapp.a(board_io.c.obj)
+ .debug_line    0x0000000000000998      0x558 app/libapp.a(main.c.obj)
  .debug_line    0x0000000000000ef0     0x17e0 zephyr/libzephyr.a(heap.c.obj)
  .debug_line    0x00000000000026d0      0xf55 zephyr/libzephyr.a(cbprintf_packaged.c.obj)
  .debug_line    0x0000000000003625      0x4ca zephyr/libzephyr.a(printk.c.obj)

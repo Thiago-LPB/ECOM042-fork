@@ -1,0 +1,20 @@
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+/ {
+       aliases {
+               sw0 = &button_led0;
+       };
+       gpio0: gpio_emul {
+              compatible = "zephyr,gpio-emul";
+              #gpio-cells = <2>;
+              ngpios = <8>;
+              gpio-controller;
+
+        };
+       buttons {
+               compatible = "gpio-keys";
+               button_led0: button_0 {
+                       gpios = <&gpio0 1  GPIO_ACTIVE_HIGH>;
+               };
+       };
+};
