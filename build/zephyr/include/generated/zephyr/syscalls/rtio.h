@@ -155,8 +155,8 @@ static inline int rtio_cqe_copy_out(struct rtio * r, struct rtio_cqe * cqes, siz
 		union { uintptr_t x; struct rtio * val; } parm0 = { .val = r };
 		union { uintptr_t x; struct rtio_cqe * val; } parm1 = { .val = cqes };
 		union { uintptr_t x; size_t val; } parm2 = { .val = cqe_count };
-		union { uintptr_t x; k_timeout_t val; } parm3 = { .val = timeout };
-		return (int) arch_syscall_invoke4(parm0.x, parm1.x, parm2.x, parm3.x, K_SYSCALL_RTIO_CQE_COPY_OUT);
+		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm3 = { .val = timeout };
+		return (int) arch_syscall_invoke5(parm0.x, parm1.x, parm2.x, parm3.split.lo, parm3.split.hi, K_SYSCALL_RTIO_CQE_COPY_OUT);
 	}
 #endif
 	compiler_barrier();

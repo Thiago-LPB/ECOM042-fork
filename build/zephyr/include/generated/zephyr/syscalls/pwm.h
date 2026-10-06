@@ -132,8 +132,12 @@ static inline int pwm_capture_cycles(const struct device * dev, uint32_t channel
 		union { uintptr_t x; pwm_flags_t val; } parm2 = { .val = flags };
 		union { uintptr_t x; uint32_t * val; } parm3 = { .val = period };
 		union { uintptr_t x; uint32_t * val; } parm4 = { .val = pulse };
-		union { uintptr_t x; k_timeout_t val; } parm5 = { .val = timeout };
-		return (int) arch_syscall_invoke6(parm0.x, parm1.x, parm2.x, parm3.x, parm4.x, parm5.x, K_SYSCALL_PWM_CAPTURE_CYCLES);
+		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm5 = { .val = timeout };
+		uintptr_t more[] = {
+			parm5.split.lo,
+			parm5.split.hi
+		};
+		return (int) arch_syscall_invoke6(parm0.x, parm1.x, parm2.x, parm3.x, parm4.x, (uintptr_t) &more, K_SYSCALL_PWM_CAPTURE_CYCLES);
 	}
 #endif
 	compiler_barrier();

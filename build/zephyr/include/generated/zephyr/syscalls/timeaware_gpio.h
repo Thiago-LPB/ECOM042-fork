@@ -126,10 +126,14 @@ static inline int tgpio_pin_periodic_output(const struct device * dev, uint32_t 
 	if (z_syscall_trap()) {
 		union { uintptr_t x; const struct device * val; } parm0 = { .val = dev };
 		union { uintptr_t x; uint32_t val; } parm1 = { .val = pin };
-		union { uintptr_t x; uint64_t val; } parm2 = { .val = start_time };
-		union { uintptr_t x; uint64_t val; } parm3 = { .val = repeat_interval };
+		union { struct { uintptr_t lo, hi; } split; uint64_t val; } parm2 = { .val = start_time };
+		union { struct { uintptr_t lo, hi; } split; uint64_t val; } parm3 = { .val = repeat_interval };
 		union { uintptr_t x; bool val; } parm4 = { .val = periodic_enable };
-		return (int) arch_syscall_invoke5(parm0.x, parm1.x, parm2.x, parm3.x, parm4.x, K_SYSCALL_TGPIO_PIN_PERIODIC_OUTPUT);
+		uintptr_t more[] = {
+			parm3.split.hi,
+			parm4.x
+		};
+		return (int) arch_syscall_invoke6(parm0.x, parm1.x, parm2.split.lo, parm2.split.hi, parm3.split.lo, (uintptr_t) &more, K_SYSCALL_TGPIO_PIN_PERIODIC_OUTPUT);
 	}
 #endif
 	compiler_barrier();

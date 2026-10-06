@@ -78,10 +78,14 @@ static inline int psi5_send(const struct device * dev, uint8_t channel, const ui
 		union { uintptr_t x; const struct device * val; } parm0 = { .val = dev };
 		union { uintptr_t x; uint8_t val; } parm1 = { .val = channel };
 		union { uintptr_t x; const uint64_t val; } parm2 = { .val = data };
-		union { uintptr_t x; k_timeout_t val; } parm3 = { .val = timeout };
+		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm3 = { .val = timeout };
 		union { uintptr_t x; psi5_tx_callback_t val; } parm4 = { .val = callback };
 		union { uintptr_t x; void * val; } parm5 = { .val = user_data };
-		return (int) arch_syscall_invoke6(parm0.x, parm1.x, parm2.x, parm3.x, parm4.x, parm5.x, K_SYSCALL_PSI5_SEND);
+		uintptr_t more[] = {
+			parm4.x,
+			parm5.x
+		};
+		return (int) arch_syscall_invoke6(parm0.x, parm1.x, parm2.x, parm3.split.lo, parm3.split.hi, (uintptr_t) &more, K_SYSCALL_PSI5_SEND);
 	}
 #endif
 	compiler_barrier();

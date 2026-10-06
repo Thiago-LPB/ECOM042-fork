@@ -1,6 +1,5 @@
 empty_file.o: \
  /home/tl/Desktop/zephyr/zephyrproject/zephyr/misc/empty_file.c \
- /home/tl/Desktop/zephyr/zephyrproject/zephyr/boards/native/native_sim/native_sim_64.dts \
  /home/tl/Desktop/zephyr/zephyrproject/zephyr/boards/native/native_sim/native_sim.dts \
  /home/tl/Desktop/zephyr/zephyrproject/zephyr/dts/posix/posix.dtsi \
  /home/tl/Desktop/zephyr/zephyrproject/zephyr/dts/common/skeleton.dtsi \
@@ -17,5 +16,5 @@ empty_file.o: \
  /home/tl/Desktop/zephyr/zephyrproject/zephyr/include/zephyr/sys/util_internal_util_x2.h \
  /home/tl/Desktop/zephyr/zephyrproject/zephyr/include/zephyr/dt-bindings/i2c/i2c.h \
  /home/tl/Desktop/zephyr/zephyrproject/zephyr/include/zephyr/dt-bindings/gpio/gpio.h \
- /home/tl/Desktop/zephyr/zephyrproject/embedded/boards/native_sim_native_64.overlay \
+ /home/tl/Desktop/zephyr/zephyrproject/embedded/boards/native_sim.overlay \
  /home/tl/Desktop/zephyr/zephyrproject/zephyr/include/zephyr/dt-bindings/input/input-event-codes.h

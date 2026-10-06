@@ -420,7 +420,7 @@
     "1000000",
     "assign",
     [
-      "/home/tl/Desktop/zephyr/zephyrproject/zephyr/boards/native/native_sim/native_sim_64_defconfig",
+      "/home/tl/Desktop/zephyr/zephyrproject/zephyr/boards/native/native_sim/native_sim_defconfig",
       4
     ]
   ],
@@ -809,7 +809,7 @@
     "y",
     "assign",
     [
-      "/home/tl/Desktop/zephyr/zephyrproject/zephyr/boards/native/native_sim/native_sim_64_defconfig",
+      "/home/tl/Desktop/zephyr/zephyrproject/zephyr/boards/native/native_sim/native_sim_defconfig",
       3
     ]
   ],
@@ -2081,7 +2081,7 @@
     "CONFIG_BOARD_TARGET",
     "n",
     "string",
-    "native_sim/native/64",
+    "native_sim/native",
     "default",
     [
       "/home/tl/Desktop/zephyr/zephyrproject/zephyr/boards/Kconfig",
@@ -2108,7 +2108,7 @@
     ]
   ],
   [
-    "CONFIG_BOARD_NATIVE_SIM_NATIVE_64",
+    "CONFIG_BOARD_NATIVE_SIM_NATIVE",
     "n",
     "bool",
     "y",
@@ -2122,7 +2122,7 @@
     "CONFIG_BOARD_QUALIFIERS",
     "n",
     "string",
-    "native/64",
+    "native",
     "default",
     [
       "/home/tl/Desktop/zephyr/zephyrproject/zephyr/boards/Kconfig.v2",
@@ -2330,11 +2330,11 @@
     "CONFIG_ARCH_POSIX_RECOMMENDED_STACK_SIZE",
     "n",
     "int",
-    "40",
+    "24",
     "default",
     [
       "/home/tl/Desktop/zephyr/zephyrproject/zephyr/arch/posix/Kconfig",
-      27
+      31
     ]
   ],
   [
@@ -2452,16 +2452,6 @@
     [
       "/home/tl/Desktop/zephyr/zephyrproject/zephyr/arch/Kconfig",
       215
-    ]
-  ],
-  [
-    "CONFIG_64BIT",
-    "n",
-    "bool",
-    "y",
-    "select",
-    [
-      "BOARD_NATIVE_SIM && BOARD_NATIVE_SIM_NATIVE_64"
     ]
   ],
   [
@@ -4532,6 +4522,33 @@
     ]
   ],
   [
+    "CONFIG_SYS_HEAP_SMALL_ONLY",
+    "y",
+    "bool",
+    "y",
+    "default",
+    [
+      "/home/tl/Desktop/zephyr/zephyrproject/zephyr/lib/heap/Kconfig",
+      163
+    ]
+  ],
+  [
+    "CONFIG_SYS_HEAP_BIG_ONLY",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
+    "CONFIG_SYS_HEAP_AUTO",
+    "y",
+    "bool",
+    null,
+    "unset",
+    null
+  ],
+  [
     "CONFIG_MULTI_HEAP",
     "y",
     "bool",
@@ -5970,6 +5987,17 @@
     ]
   ],
   [
+    "CONFIG_LOG_SIMPLE_MSG_OPTIMIZE",
+    "y",
+    "bool",
+    "y",
+    "default",
+    [
+      "/home/tl/Desktop/zephyr/zephyrproject/zephyr/subsys/logging/Kconfig.misc",
+      31
+    ]
+  ],
+  [
     "CONFIG_LOG_ALWAYS_RUNTIME",
     "y",
     "bool",
@@ -6496,11 +6524,11 @@
     "CONFIG_LINKER_ITERABLE_SUBALIGN",
     "n",
     "int",
-    "8",
+    "4",
     "default",
     [
       "/home/tl/Desktop/zephyr/zephyrproject/zephyr/Kconfig.zephyr",
-      362
+      363
     ]
   ],
   [

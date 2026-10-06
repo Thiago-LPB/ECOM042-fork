@@ -6,14 +6,14 @@ cmake:
     name: 'native_sim'
     path:
      - '/home/tl/Desktop/zephyr/zephyrproject/zephyr/boards/native/native_sim'
-    qualifiers: 'native/64'
+    qualifiers: 'native'
     revision: ''
   devicetree:
     bindings-dirs:
      - '/home/tl/Desktop/zephyr/zephyrproject/zephyr/dts/bindings'
     files:
-     - '/home/tl/Desktop/zephyr/zephyrproject/zephyr/boards/native/native_sim/native_sim_64.dts'
-     - '/home/tl/Desktop/zephyr/zephyrproject/embedded/boards/native_sim_native_64.overlay'
+     - '/home/tl/Desktop/zephyr/zephyrproject/zephyr/boards/native/native_sim/native_sim.dts'
+     - '/home/tl/Desktop/zephyr/zephyrproject/embedded/boards/native_sim.overlay'
     include-dirs:
      - '/home/tl/Desktop/zephyr/zephyrproject/modules/hal/ambiq/dts'
      - '/home/tl/Desktop/zephyr/zephyrproject/modules/hal/atmel/include'
@@ -41,10 +41,10 @@ cmake:
      - '/home/tl/Desktop/zephyr/zephyrproject/zephyr/dts/arc'
      - '/home/tl/Desktop/zephyr/zephyrproject/zephyr/dts'
     user-files:
-     - '/home/tl/Desktop/zephyr/zephyrproject/embedded/boards/native_sim_native_64.overlay'
+     - '/home/tl/Desktop/zephyr/zephyrproject/embedded/boards/native_sim.overlay'
   kconfig:
     files:
-     - '/home/tl/Desktop/zephyr/zephyrproject/zephyr/boards/native/native_sim/native_sim_64_defconfig'
+     - '/home/tl/Desktop/zephyr/zephyrproject/zephyr/boards/native/native_sim/native_sim_defconfig'
      - '/home/tl/Desktop/zephyr/zephyrproject/embedded/prj.conf'
     user-files:
      - '/home/tl/Desktop/zephyr/zephyrproject/embedded/prj.conf'
@@ -56,6 +56,6 @@ cmake:
     zephyr-base: '/home/tl/Desktop/zephyr/zephyrproject/zephyr'
 version: '0.1.0'
 west:
-  command: '/nix/store/csvf7fxgbg5azgd25draymrppvyqbwvn-python3.13-west-1.5.0/bin/west build -b native_sim/native/64 . -t run --pristine'
+  command: '/nix/store/csvf7fxgbg5azgd25draymrppvyqbwvn-python3.13-west-1.5.0/bin/west build -b native_sim . -t run --pristine'
   topdir: '/home/tl/Desktop/zephyr/zephyrproject'
   version: '1.5.0'

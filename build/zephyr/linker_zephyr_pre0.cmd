@@ -141,8 +141,8 @@ ztest :
   KEEP (*(.init_array .ctors))
   __zephyr_init_array_end = .;
   __CTOR_LIST__ = .;
-  QUAD(0)
-  QUAD(0)
+  LONG(0)
+  LONG(0)
   __CTOR_END__ = .;
   __init_array_start = .;
   __init_array_end = .;

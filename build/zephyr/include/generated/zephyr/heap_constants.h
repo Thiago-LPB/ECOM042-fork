@@ -11,9 +11,9 @@
 #define ___z_heap_struct_SIZEOF 0x10
 #define ___z_heap_bucket_SIZEOF 0x4
 #define ___z_heap_chunk_unit_SIZEOF 0x8
-#define ___z_heap_hdr_SIZEOF 0x8
-#define ___z_heap_ftr_SIZEOF 0x8
+#define ___z_heap_hdr_SIZEOF 0x4
+#define ___z_heap_ftr_SIZEOF 0x4
 #define ___z_heap_trailer_SIZEOF 0x0
-#define ___z_heap_min_chunk_SIZEOF 0x2
+#define ___z_heap_min_chunk_SIZEOF 0x1
 
 #endif /* __GEN_HEAP_CONSTANTS_H__ */

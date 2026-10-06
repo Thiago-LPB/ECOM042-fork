@@ -1,13 +1,6 @@
 # 0 "/home/tl/Desktop/zephyr/zephyrproject/zephyr/misc/empty_file.c"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "/home/tl/Desktop/zephyr/zephyrproject/zephyr/boards/native/native_sim/native_sim_64.dts" 1
-
-
-
-
-
-
 # 1 "/home/tl/Desktop/zephyr/zephyrproject/zephyr/boards/native/native_sim/native_sim.dts" 1
 
 
@@ -326,11 +319,10 @@
   };
  };
 };
-# 8 "/home/tl/Desktop/zephyr/zephyrproject/zephyr/boards/native/native_sim/native_sim_64.dts" 2
 # 0 "<command-line>" 2
-# 1 "/home/tl/Desktop/zephyr/zephyrproject/embedded/boards/native_sim_native_64.overlay" 1
+# 1 "/home/tl/Desktop/zephyr/zephyrproject/embedded/boards/native_sim.overlay" 1
 # 1 "/home/tl/Desktop/zephyr/zephyrproject/zephyr/include/zephyr/dt-bindings/input/input-event-codes.h" 1 3 4
-# 2 "/home/tl/Desktop/zephyr/zephyrproject/embedded/boards/native_sim_native_64.overlay" 2
+# 2 "/home/tl/Desktop/zephyr/zephyrproject/embedded/boards/native_sim.overlay" 2
 
 / {
        aliases {

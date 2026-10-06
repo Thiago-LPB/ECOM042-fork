@@ -29,7 +29,7 @@
 		spi-0 = &spi0;       /* in zephyr/boards/native/native_sim/native_sim.dts:34 */
 		led0 = &led0;        /* in zephyr/boards/native/native_sim/native_sim.dts:35 */
 		rtc = &rtc;          /* in zephyr/boards/native/native_sim/native_sim.dts:36 */
-		sw0 = &button_led0;  /* in embedded/boards/native_sim_native_64.overlay:5 */
+		sw0 = &button_led0;  /* in embedded/boards/native_sim.overlay:5 */
 	};
 
 	/* node '/leds' defined in zephyr/boards/native/native_sim/native_sim.dts:39 */
@@ -197,10 +197,10 @@
 		falling-edge;                    /* in zephyr/boards/native/native_sim/native_sim.dts:186 */
 		high-level;                      /* in zephyr/boards/native/native_sim/native_sim.dts:187 */
 		low-level;                       /* in zephyr/boards/native/native_sim/native_sim.dts:188 */
-		compatible = "zephyr,gpio-emul"; /* in embedded/boards/native_sim_native_64.overlay:8 */
-		#gpio-cells = < 0x2 >;           /* in embedded/boards/native_sim_native_64.overlay:9 */
-		ngpios = < 0x8 >;                /* in embedded/boards/native_sim_native_64.overlay:10 */
-		gpio-controller;                 /* in embedded/boards/native_sim_native_64.overlay:11 */
+		compatible = "zephyr,gpio-emul"; /* in embedded/boards/native_sim.overlay:8 */
+		#gpio-cells = < 0x2 >;           /* in embedded/boards/native_sim.overlay:9 */
+		ngpios = < 0x8 >;                /* in embedded/boards/native_sim.overlay:10 */
+		gpio-controller;                 /* in embedded/boards/native_sim.overlay:11 */
 		phandle = < 0x1 >;               /* in zephyr/boards/native/native_sim/native_sim.dts:43 */
 	};
 
@@ -289,13 +289,13 @@
 		};
 	};
 
-	/* node '/buttons' defined in embedded/boards/native_sim_native_64.overlay:14 */
+	/* node '/buttons' defined in embedded/boards/native_sim.overlay:14 */
 	buttons {
-		compatible = "gpio-keys"; /* in embedded/boards/native_sim_native_64.overlay:15 */
+		compatible = "gpio-keys"; /* in embedded/boards/native_sim.overlay:15 */
 
-		/* node '/buttons/button_0' defined in embedded/boards/native_sim_native_64.overlay:16 */
+		/* node '/buttons/button_0' defined in embedded/boards/native_sim.overlay:16 */
 		button_led0: button_0 {
-			gpios = < &gpio0 0x1 0x0 >; /* in embedded/boards/native_sim_native_64.overlay:17 */
+			gpios = < &gpio0 0x1 0x0 >; /* in embedded/boards/native_sim.overlay:17 */
 		};
 	};
 };

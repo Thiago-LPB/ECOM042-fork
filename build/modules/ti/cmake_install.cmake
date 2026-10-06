@@ -34,7 +34,7 @@ endif()
 
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/nix/store/sf94i342x394ls6l9pfzrvh1f6dmhqzm-gcc-wrapper-15.2.0/bin/objdump")
+  set(CMAKE_OBJDUMP "/nix/store/5yprfj4sg1y361aakmda5ffimjbld7xh-gcc-wrapper-15.2.0/bin/objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

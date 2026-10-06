@@ -126,9 +126,9 @@ static inline int biometric_enroll_capture(const struct device * dev, k_timeout_
 #ifdef CONFIG_USERSPACE
 	if (z_syscall_trap()) {
 		union { uintptr_t x; const struct device * val; } parm0 = { .val = dev };
-		union { uintptr_t x; k_timeout_t val; } parm1 = { .val = timeout };
+		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm1 = { .val = timeout };
 		union { uintptr_t x; struct biometric_capture_result * val; } parm2 = { .val = result };
-		return (int) arch_syscall_invoke3(parm0.x, parm1.x, parm2.x, K_SYSCALL_BIOMETRIC_ENROLL_CAPTURE);
+		return (int) arch_syscall_invoke4(parm0.x, parm1.split.lo, parm1.split.hi, parm2.x, K_SYSCALL_BIOMETRIC_ENROLL_CAPTURE);
 	}
 #endif
 	compiler_barrier();
@@ -324,9 +324,9 @@ static inline int biometric_match(const struct device * dev, enum biometric_matc
 		union { uintptr_t x; const struct device * val; } parm0 = { .val = dev };
 		union { uintptr_t x; enum biometric_match_mode val; } parm1 = { .val = mode };
 		union { uintptr_t x; uint16_t val; } parm2 = { .val = template_id };
-		union { uintptr_t x; k_timeout_t val; } parm3 = { .val = timeout };
+		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm3 = { .val = timeout };
 		union { uintptr_t x; struct biometric_match_result * val; } parm4 = { .val = result };
-		return (int) arch_syscall_invoke5(parm0.x, parm1.x, parm2.x, parm3.x, parm4.x, K_SYSCALL_BIOMETRIC_MATCH);
+		return (int) arch_syscall_invoke6(parm0.x, parm1.x, parm2.x, parm3.split.lo, parm3.split.hi, parm4.x, K_SYSCALL_BIOMETRIC_MATCH);
 	}
 #endif
 	compiler_barrier();

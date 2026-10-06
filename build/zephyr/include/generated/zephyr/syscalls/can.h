@@ -479,10 +479,10 @@ static inline int can_send(const struct device * dev, const struct can_frame * f
 	if (z_syscall_trap()) {
 		union { uintptr_t x; const struct device * val; } parm0 = { .val = dev };
 		union { uintptr_t x; const struct can_frame * val; } parm1 = { .val = frame };
-		union { uintptr_t x; k_timeout_t val; } parm2 = { .val = timeout };
+		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm2 = { .val = timeout };
 		union { uintptr_t x; can_tx_callback_t val; } parm3 = { .val = callback };
 		union { uintptr_t x; void * val; } parm4 = { .val = user_data };
-		return (int) arch_syscall_invoke5(parm0.x, parm1.x, parm2.x, parm3.x, parm4.x, K_SYSCALL_CAN_SEND);
+		return (int) arch_syscall_invoke6(parm0.x, parm1.x, parm2.split.lo, parm2.split.hi, parm3.x, parm4.x, K_SYSCALL_CAN_SEND);
 	}
 #endif
 	compiler_barrier();
@@ -604,8 +604,8 @@ static inline int can_recover(const struct device * dev, k_timeout_t timeout)
 #ifdef CONFIG_USERSPACE
 	if (z_syscall_trap()) {
 		union { uintptr_t x; const struct device * val; } parm0 = { .val = dev };
-		union { uintptr_t x; k_timeout_t val; } parm1 = { .val = timeout };
-		return (int) arch_syscall_invoke2(parm0.x, parm1.x, K_SYSCALL_CAN_RECOVER);
+		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm1 = { .val = timeout };
+		return (int) arch_syscall_invoke3(parm0.x, parm1.split.lo, parm1.split.hi, K_SYSCALL_CAN_RECOVER);
 	}
 #endif
 	compiler_barrier();

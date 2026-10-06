@@ -1,4 +1,4 @@
-set(CMAKE_CXX_COMPILER "/nix/store/sf94i342x394ls6l9pfzrvh1f6dmhqzm-gcc-wrapper-15.2.0/bin/gcc")
+set(CMAKE_CXX_COMPILER "/nix/store/5yprfj4sg1y361aakmda5ffimjbld7xh-gcc-wrapper-15.2.0/bin/gcc")
 set(CMAKE_CXX_COMPILER_ARG1 "")
 set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_COMPILER_VERSION "15.2.0")
@@ -25,11 +25,11 @@ set(CMAKE_CXX_COMPILER_ARCHITECTURE_ID "")
 
 
 
-set(CMAKE_AR "/nix/store/sf94i342x394ls6l9pfzrvh1f6dmhqzm-gcc-wrapper-15.2.0/bin/ar")
+set(CMAKE_AR "/nix/store/5yprfj4sg1y361aakmda5ffimjbld7xh-gcc-wrapper-15.2.0/bin/ar")
 set(CMAKE_CXX_COMPILER_AR "/nix/store/06i01ld530x5pnhy1wmz5rbs8491s9x8-gcc-15.2.0/bin/gcc-ar")
-set(CMAKE_RANLIB "/nix/store/sf94i342x394ls6l9pfzrvh1f6dmhqzm-gcc-wrapper-15.2.0/bin/ranlib")
+set(CMAKE_RANLIB "/nix/store/5yprfj4sg1y361aakmda5ffimjbld7xh-gcc-wrapper-15.2.0/bin/ranlib")
 set(CMAKE_CXX_COMPILER_RANLIB "/nix/store/06i01ld530x5pnhy1wmz5rbs8491s9x8-gcc-15.2.0/bin/gcc-ranlib")
-set(CMAKE_LINKER "/nix/store/sf94i342x394ls6l9pfzrvh1f6dmhqzm-gcc-wrapper-15.2.0/bin/ld.bfd")
+set(CMAKE_LINKER "/nix/store/5yprfj4sg1y361aakmda5ffimjbld7xh-gcc-wrapper-15.2.0/bin/ld.bfd")
 set(CMAKE_LINKER_LINK "")
 set(CMAKE_LINKER_LLD "")
 set(CMAKE_CXX_COMPILER_LINKER "")
